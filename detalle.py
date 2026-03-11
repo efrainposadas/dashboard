@@ -1298,10 +1298,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:#f8fafc;}
             ("8",  "th-pab",    "Sales Orders\n(pzas)"),
             ("9",  "th-pab",    "PAB\n(pzas)"),
             ("10", "th-pab",    "FC / mes\n(pzas)"),
-            ("11", "th-mos",    "MOS\nOn Hand"),
-            ("12", "th-mos",    "MOS\nConfirmado"),
-            ("13", "th-mos",    "MOS\nPlaneado"),
-            ("14", "th-mos",    "MOS\nPAB"),
+
             ("15", "th-rsk",    "Clasificación"),
             ("16", "",          f"Inv. ({simbolo_mon})"),
         ]
@@ -1315,8 +1312,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:#f8fafc;}
             ("5",  "",         f"Pedido ({simbolo_mon})"),
             ("6",  "",         "Pzas Pedido"),
             ("7",  "",         f"OC Tránsito ({simbolo_mon})"),
-            ("8",  "th-mos",   "MOS"),
-            ("9",  "",         "Forecast Pzas"),
+            ("8",  "",         "Forecast Pzas"),
         ]
 
     thead_parts = []
@@ -1374,9 +1370,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:#f8fafc;}
                 f'<td class="tr td-pab" data-val="{plan_pza:.0f}">{plan_pza:,.0f}</td>'
                 f'<td class="tr td-pab" data-val="{so_pza:.0f}" style="color:#C0392B;">{so_pza:,.0f}</td>'
                 f'<td class="tr td-pab" data-val="{pab_pza:.0f}" style="font-weight:800;">{pab_pza:,.0f}</td>'
-                f'<td class="tr td-mos" data-val="{fc_mes_v:.1f}">{fc_mes_v:,.1f}</td>'
-                f'<td class="tr td-mos" data-val="{lt_m:.1f}">{lt_m:.1f} m</td>'
-                f'<td class="tr td-mos" data-val="{mos_raw}"><span class="{mos_pill}">{mos_str}</span></td>'
+
                 f'<td class="tr" data-val="{inv_usd:.2f}">{_fmt_mon(inv_usd,1,simbolo_mon)}</td>'
                 f'</tr>\n'
             )
@@ -1391,7 +1385,6 @@ body{font-family:'IBM Plex Sans',sans-serif;background:#f8fafc;}
                 f'<td class="tr" data-val="{ped_usd:.2f}">{_fmt_mon(ped_usd,1,simbolo_mon)}</td>'
                 f'<td class="tr" data-val="{ped_pza:.0f}">{ped_pza:,.0f}</td>'
                 f'<td class="tr" data-val="{oct_usd:.2f}">{_fmt_mon(oct_usd,1,simbolo_mon)}</td>'
-                f'<td class="tr td-mos" data-val="{mos_raw}"><span class="{mos_pill}">{mos_str}</span></td>'
                 f'<td class="tr" data-val="{fc_pza:.0f}">{fc_pza:,.0f}</td>'
                 f'</tr>\n'
             )
@@ -1407,8 +1400,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:#f8fafc;}
             f'<td class="tr td-pab"></td><td class="tr td-pab"></td>'
             f'<td class="tr td-pab"></td><td class="tr td-pab"></td>'
             f'<td class="tr td-pab" style="font-weight:800;">{tot_pab:,.0f}</td>'
-            f'<td class="tr td-mos">{fc_mes_tot:,.1f}</td>'
-            f'<td class="tr td-mos"></td><td class="tr td-mos"></td>'
+
             f'<td class="tr">{_fmt_mon(tot_inv_usd,1,simbolo_mon)}</td>'
             f'</tr>'
         )
@@ -1422,7 +1414,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:#f8fafc;}
             f'<td class="tr">{_fmt_mon(tot_ped_usd,1,simbolo_mon)}</td>'
             f'<td class="tr">{tot_ped_pza:,.0f}</td>'
             f'<td class="tr">{_fmt_mon(tot_oct_usd,1,simbolo_mon)}</td>'
-            f'<td></td><td></td></tr>'
+            f'<td></td></tr>'
         )
 
     js = """
